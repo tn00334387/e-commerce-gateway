@@ -7,8 +7,8 @@ dotenv.config();
 
 router.use('/users', createProxyMiddleware({
     target: process.env.USER_HOST_URL,
-    pathRewrite: { '^/': '/api/users/' },
     changeOrigin: true,
+    pathRewrite: { '^/': '/api/users/' },
 }));
 
 router.use('/product', createProxyMiddleware({
